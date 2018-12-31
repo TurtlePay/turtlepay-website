@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
+    <link rel="manifest" href="./ico/site.webmanifest">
+    <link rel="mask-icon" href="./ico/safari-pinned-tab.svg" color="#00853d">
+    <link rel="shortcut icon" href="./ico/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00853d">
+    <meta name="msapplication-config" content="./ico/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="TurtlePay">
+    <meta name="Description" content="TurtleCoin payments processing for developers, by developers.">
+    <meta property="og:description" content="TurtleCoin payments processing for developers, by developers.">
+    <meta property="og:image" content="https://turtlepay.io/img/turtlecoin_shield.png">
+    <meta name="Keywords" content="TurtleCoin,TurtlePay,blockchain,explorer,pools,hashrate,hash rate,mining,block explorer">
+    <title>TurtlePay&trade;: Fun, Fast, & Easy Crypto Payments</title>
+    <link rel="stylesheet" href="./css/third-party.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/third-party.js"></script>
+    <style>
+      code {
+      text-align: left;
+      background-color: #eee;
+      border: 1px solid #999;
+      display: block;
+      padding: 5px;
+      white-space: pre;
+      }
+    </style>
+  </head>
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://turtlepay.io">
+        <img src="./img/turtlepay_logo.png" height="100">
+        </a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="siteNavBar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="siteNavBar" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="./"><i class="fas fa-home"></i>&nbsp; Home</a>
+          <a class="navbar-item is-active" href="./docs.html"><i class="fas fa-book"></i>&nbsp; Docs</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="section">
+        <div class="container has-text-centered">
+          <h1 class="is-size-1">Getting Started</h1>
+        </div>
+      </section>
+      <section class="hero has-text-centered">
+        <div class="hero-body">
+          <h1 class="title">
+            Submitting A Payment Request
+          </h1>
+          <div class="subtitle" style="width: 45%; margin: auto; text-align: justify;">
+            Don't worry, this will be easy.
+          </div>
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            Start by creating a JSON object that contains a few pieces of information.
+          </div>
+          <br />
+          <code>
+          {
+            "amount": 100,
+            "address": "TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ",
+            "callback": "https://mycoolwebapp.com/process"
+          }
+          </code>
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            You'll need to supply the amount you want to receive in atomic units. As TurtleCoin&trade; uses two decimals places, 1.00 TRTL becomes 100 atomic units.
+          </div>
+          <br />
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            <strong>Note: </strong> Make sure that you supply the TurtleCoin&trade; of a wallet you own to make sure that you receive the funds.
+          </div>
+        </div>
+      </section>
+      <section class="hero has-text-centered">
+        <div class="hero-body">
+          <h1 class="title">
+            Send The Request To TurtlePay&trade;
+          </h1>
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            Post that request to <a href="https://api.turtlepay.io/v1/new">https://api.turtlepay.io/v1/new</a> using your favorite programming language.
+          </div>
+        </div>
+      </section>
+      <section class="hero has-text-centered">
+        <div class="hero-body">
+          <h1 class="title">
+            Process the Response
+          </h1>
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            You'll receive back a response such as this if everything went according to plan.
+          </div>
+          <code>
+          {
+            "sendToAddress": "TRTLuzbkEepSJdmqkMJ11APWaazS8aat2Vmobbve6GA1D8FfMr7PAZZMJv7TozUXaw5y7DN2n626P54J465fhDmFatRSnp61Vkv",
+            "atomicAmount": 100,
+            "amount": 1,
+            "userDefined": {},
+            "startHeight": 1109310,
+            "endHeight": 1109370,
+            "confirmations": 60,
+            "qrCode": "https://chart.googleapis.com/chart?cht=qr&chs=256x256&chl=turtlecoin://TRTLuzbkEepSJdmqkMJ11APWaazS8aat2Vmobbve6GA1D8FfMr7PAZZMJv7TozUXaw5y7DN2n626P54J465fhDmFatRSnp61Vkv?amount=100"
+          }
+          </code>
+        </div>
+        <div style="width: 45%; margin: auto; text-align: justify;">
+          Display the <strong>sendToAddress</strong> to the user and prompt them to make payment to that address in the proper amount as requested.
+        </div>
+        <br />
+        <div style="width: 45%; margin: auto; text-align: justify;">
+          <strong>Note:</strong> Payment requests are only valid for approximately 30 minutes (exactly 60 blocks). So it's important that if your user doesn't complete a payment that a new request is completed if they attempt to pay you again.
+        </div>
+      </section>
+      <section class="hero has-text-centered">
+        <div class="hero-body">
+          <h1 class="title">
+            Relax, We'll Do The Hard Part
+          </h1>
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            Sit back and relax. We'll do the hard parts and wait for the user to send the funds in.
+          </div>
+          <br />
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            Once we receive the funds, or if something goes wrong, we'll send a message to the callback URL you specified.
+          </div>
+          <br />
+          <div style="width: 45%; margin: auto; text-align: justify;">
+            We're still working on the full documentation surrounding that callback; however, in the JSON message we post back to you, you'll see a <strong>status</strong> property of <strong>200</strong> if everything worked correctly.
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="content has-text-centered">
+        <p>
+          Copyright &copy; 2018 TurtlePay&trade; Development Team. The source code is licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
