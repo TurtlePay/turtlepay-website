@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="utf-8">
     <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
@@ -17,93 +19,71 @@
     <meta property="og:image" content="https://turtlepay.io/img/turtlecoin_shield.png">
     <meta name="Keywords" content="TurtleCoin,TurtlePay,blockchain,explorer,pools,hashrate,hash rate,mining,block explorer">
     <title>TurtlePay&trade;: Fun, Fast, & Easy Crypto Payments</title>
-    <link rel="stylesheet" href="./css/third-party.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/app.css">
-    <script src="./js/third-party.js"></script>
-    <style>
-      code {
-      text-align: left;
-      background-color: #eee;
-      border: 1px solid #999;
-      display: block;
-      padding: 5px;
-      white-space: pre;
-      }
-    </style>
-  </head>
-  <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://turtlepay.io">
-        <img src="./img/turtlepay_logo.png" height="100">
-        </a>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="siteNavBar">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div id="siteNavBar" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="./"><i class="fas fa-home"></i>&nbsp; Home</a>
-          <a class="navbar-item is-active" href="./docs.html"><i class="fas fa-book"></i>&nbsp; Docs</a>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <section class="section">
-        <div class="container has-text-centered">
-          <h1 class="is-size-1">Getting Started</h1>
-        </div>
-      </section>
-      <section class="hero has-text-centered">
-        <div class="hero-body">
-          <h1 class="title">
-            Submitting A Payment Request
-          </h1>
-          <div class="subtitle" style="width: 45%; margin: auto; text-align: justify;">
-            Don't worry, this will be easy.
-          </div>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            Start by creating a JSON object that contains a few pieces of information.
-          </div>
-          <br />
-          <code>
+</head>
+
+<body class="font-serif tracking-wide leading-normal">
+    <div class="container mx-auto">
+        <section id="navbar">
+            <div class="py-3 md:mb-3 mb-10">
+                <div class="flex items-center  text-sm md:text-base md:flex-row">
+                    <a href="/" "email me"> <img src="./img/turtlepay_logo.png" class="h-12"/></a>
+                    <div class="ml-6">
+                        <ul class="list-reset flex md:flex-row items-center">
+                            <li class=""><a href="/" class="no-underline text-black" ><i class="fas fa-home"></i>&nbsp; <span class="md:inline">Home</span></a></li>
+                            <li class="ml-6 "><a href="/docs.html" class="no-underline text-green"><i class="fas fa-book"></i>&nbsp; <span class=" md:inline">Docs</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="title" class="mb-16">
+            <div class="flex justify-center">
+                <h1 class="font-normal text-5xl">Getting Started</h1>
+            </div>
+        </section>
+        <section id="content" class="mb-32 text-base">
+            <div class="flex justify-center mb-10 ">
+                <div class="w-5/6 md:w-3/5 ">
+                    <h1 class="font-normal text-center mb-6">Submitting A Payment Request</h1>
+                    <div class="w-full text-left">
+                        <p class="font-medium">Don't worry, this will be easy.</p>
+                        <p class=""> Start by creating a JSON object that contains a few pieces of information.</p>
+                    </div>
+                </div>
+            </div>
+            <code class="mb-6 m-0 m-auto md:w-5/6 w-full">
           {
             "amount": 100,
             "address": "TRTLv1pacKFJk9QgSmzk2LJWn14JGmTKzReFLz1RgY3K9Ryn7783RDT2TretzfYdck5GMCGzXTuwKfePWQYViNs4avKpnUbrwfQ",
             "callback": "https://mycoolwebapp.com/process"
           }
           </code>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            You'll need to supply the amount you want to receive in atomic units. As TurtleCoin&trade; uses two decimals places, 1.00 TRTL becomes 100 atomic units.
-          </div>
-          <br />
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            <strong>Note: </strong> Make sure that you supply the TurtleCoin&trade; of a wallet you own to make sure that you receive the funds.
-          </div>
-        </div>
-      </section>
-      <section class="hero has-text-centered">
-        <div class="hero-body">
-          <h1 class="title">
-            Send The Request To TurtlePay&trade;
-          </h1>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            Post that request to <a href="https://api.turtlepay.io/v1/new">https://api.turtlepay.io/v1/new</a> using your favorite programming language.
-          </div>
-        </div>
-      </section>
-      <section class="hero has-text-centered">
-        <div class="hero-body">
-          <h1 class="title">
-            Process the Response
-          </h1>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            You'll receive back a response such as this if everything went according to plan.
-          </div>
-          <code>
+            <div class="flex justify-center mb-16">
+                <div class="w-5/6 md:w-3/5 ">
+                    <p class="mb-4">You'll need to supply the amount you want to receive in atomic units. As TurtleCoin™ uses two decimals places, 1.00 TRTL becomes 100 atomic units.</p>
+                    <p><strong>Note:</strong> Make sure that you supply the TurtleCoin™ of a wallet you own to make sure that you receive the funds.</p>
+                </div>
+            </div>
+            <div class="flex justify-center mb-16">
+                <div class="w-5/6 md:w-3/5 ">
+                    <h1 class="font-normal text-center mb-6">Send The Request To TurtlePay™</h1>
+                    <div class="w-full text-left">
+                        <p> Post that request to <a href="https://api.turtlepay.io/v1/new" class="text-green">https://api.turtlepay.io/v1/new</a> using your favorite programming language.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mb-10">
+                <div class="w-5/6 md:w-3/5 ">
+                    <h1 class="font-normal text-center mb-6">Process the Response</h1>
+                    <div class="w-full text-left">
+                        <p> You'll receive back a response such as this if everything went according to plan.</p>
+                    </div>
+                </div>
+            </div>
+            <code class="mb-6 m-0 m-auto md:w-5/6 w-full">
+
           {
             "sendToAddress": "TRTLuzbkEepSJdmqkMJ11APWaazS8aat2Vmobbve6GA1D8FfMr7PAZZMJv7TozUXaw5y7DN2n626P54J465fhDmFatRSnp61Vkv",
             "atomicAmount": 100,
@@ -115,51 +95,55 @@
             "qrCode": "https://chart.googleapis.com/chart?cht=qr&chs=256x256&chl=turtlecoin://TRTLuzbkEepSJdmqkMJ11APWaazS8aat2Vmobbve6GA1D8FfMr7PAZZMJv7TozUXaw5y7DN2n626P54J465fhDmFatRSnp61Vkv?amount=100"
           }
           </code>
-        </div>
-        <div style="width: 45%; margin: auto; text-align: justify;">
-          Display the <strong>sendToAddress</strong> to the user and prompt them to make payment to that address in the proper amount as requested.
-        </div>
-        <br />
-        <div style="width: 45%; margin: auto; text-align: justify;">
-          <strong>Note:</strong> Payment requests are only valid for approximately 30 minutes (exactly 60 blocks). So it's important that if your user doesn't complete a payment that a new request is completed if they attempt to pay you again.
-        </div>
-      </section>
-      <section class="hero has-text-centered">
-        <div class="hero-body">
-          <h1 class="title">
-            Relax, We'll Do The Hard Part
-          </h1>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            Sit back and relax. We'll do the hard parts and wait for the user to send the funds in.
-          </div>
-          <br />
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            Once we receive the funds, or if something goes wrong, we'll send a message to the callback URL you specified.
-          </div>
-          <br />
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            We're still working on the full documentation surrounding that callback; however, in the JSON message we post back to you, you'll see a <strong>status</strong> property of <strong>200</strong> if everything worked correctly.
-          </div>
-        </div>
-      </section>
-      
-      <section class="hero has-text-centered">
-        <div class="hero-body">
-          <h1 class="title">
-            Looking For More?
-          </h1>
-          <div style="width: 45%; margin: auto; text-align: justify;">
-            Check out our <a href="https://github.com/TurtlePay">GitHub Organization</a> or check out the some <a href="https://docs.turtlepay.io/api">API documentation</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="content has-text-centered">
-        <p>
-          Copyright &copy; 2018 TurtlePay&trade; Development Team. The source code is licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a>.
-        </p>
-      </div>
-    </footer>
-  </body>
+            <div class="flex justify-center mb-16">
+                <div class="w-5/6 md:w-3/5 ">
+                    <p class="mb-4">Display the <strong>sendToAddress</strong> to the user and prompt them to make payment to that address in the proper amount as requested.</p>
+                    <p><strong>Note:</strong> Payment requests are only valid for approximately 30 minutes (exactly 60 blocks). So it's important that if your user doesn't complete a payment that a new request is completed if they attempt to pay you again.</p>
+                </div>
+            </div>
+            <div class="flex justify-center mb-16">
+                <div class="w-5/6 md:w-3/5 ">
+                    <h1 class="font-normal text-center mb-6">Relax, We'll Do The Hard Part</h1>
+                    <div class="w-full text-left">
+                        <p class="mb-4">Sit back and relax. We'll do the hard parts and wait for the user to send the funds in.</p>
+                        <p class="mb-4">Once we receive the funds, or if something goes wrong, we'll send a message to the callback URL you specified.
+                        </p>
+                        <p>We're still working on the full documentation surrounding that callback; however, in the JSON message we post back to you, you'll see a status property of 200 if everything worked correctly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mb-16">
+                <div class="w-5/6 md:w-3/5 ">
+                    <h1 class="font-normal text-center mb-6">Looking For More?</h1>
+                    <div class="w-full text-left">
+                        <p></p>Check out our <a href="https://github.com/TurtlePay" class="text-green">GitHub Organization</a> or check out the some <a href="https://docs.turtlepay.io/api" class="text-green">API documentation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="footer">
+            <div class="flex justify-center">
+                <div class="w-4/5 text-center pb-2 text-sm">
+                    Copyright © 2018 TurtlePay™ Development Team. The source code is licensed under AGPL-3.0.
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
 </html>
+<style>
+code {
+    text-align: left;
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 5px;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+</style>
